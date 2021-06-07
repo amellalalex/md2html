@@ -20,7 +20,7 @@ for FILE_PATH in "$DIR"*.md; do
   HTML_NAME="${FILE_NAME::${#FILE_NAME}-3}.html"
   HTML_NAME=$(echo $HTML_NAME | tr -d ' ')
 
-  cat "${SCRIPT_DIR}/intro.html" >>$HTML_NAME
+  cat "${SCRIPT_DIR}/intro.html" >$HTML_NAME
   showdown makehtml -i "$FILE_PATH" >>$HTML_NAME
   cat "${SCRIPT_DIR}/outro.html" >>$HTML_NAME
 
